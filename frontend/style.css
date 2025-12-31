@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+:root {
+  --bg: #f5e6c8;
+  --text: #3b2f2f;
+  --card: #fff3d6;
+  --accent: #8b5e3c;
+}
+
+body.dark {
+  --bg: #1c1a17;
+  --text: #e6d9c3;
+  --card: #2a2622;
+  --accent: #c9a66b;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Special Elite', cursive;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+h1 {
+  letter-spacing: 2px;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  padding: 6px 10px;
+  margin: 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+input {
+  padding: 6px;
+  font-family: inherit;
+}
+
+li {
+  background: var(--card);
+  margin: 6px 0;
+  padding: 8px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
