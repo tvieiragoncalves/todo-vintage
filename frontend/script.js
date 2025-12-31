@@ -1,9 +1,10 @@
+const API = "https://todo-vintage.onrender.com";
 function toggleDark() {
     document.body.classList.toggle("dark");
   }
 let categoriaAtual = 1;
 
-fetch("/categorias")
+fetch(API + "/categorias")
   .then(res => res.json())
   .then(categorias => {
     categorias.forEach(cat => {
@@ -17,7 +18,7 @@ fetch("/categorias")
 
   function carregar(categoria) {
     categoriaAtual = categoria;
-    fetch("/tarefas/" + categoria)
+    fetch(API + "/tarefas/" + categoria)
       .then(res => res.json())
       .then(tarefas => {
         lista.innerHTML = "";
@@ -37,7 +38,7 @@ fetch("/categorias")
   }
 
 function adicionar() {
-  fetch("/tarefas", {
+  fetch(API + "/tarefas", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ texto: nova.value, categoria: categoriaAtual })
@@ -48,11 +49,11 @@ function adicionar() {
 }
 
 function apagar(id) {
-  fetch("/tarefas/" + id, { method: "DELETE" })
+  fetch(API + "/tarefas/" + id, { method: "DELETE" })
     .then(() => carregar(categoriaAtual));
 }
 function editar(id, elemento) {
-    fetch("/tarefas/" + id, {
+    fetch(API + "/tarefas/" + id, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ texto: elemento.innerText })
