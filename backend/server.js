@@ -1,3 +1,5 @@
+const cors = require("cors");
+app.use(cors());
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const app = express();
